@@ -75,28 +75,49 @@ def clear_screen():
 def main():
     while True:
         clear_screen()
-        print("\n--- MAIN MENU ---")
-        print("DEQUE using Array\n")
+        print("\n--- Dequeue Using Array ---\n")
         print("1. Insert at Rear")         
         print("2. Insert at Front")
         print("3. Delete from Rear")
         print("4. Delete from Front")
         print("5. Traverse")
         print("6. Exit")
-        choice = input("Enter Your Choice (1-6): ")
-        if choice == '1':
+        try:
+            choice = int(input("\nEnter your choice (1-6): --> "))
+        except ValueError:
+            print("\nPlease enter a valid number from (1-6)! not letters or symbols.")
+            input("\nPress Enter key to refresh...")
+            import time
+            clear_screen()
+            print("\n\n\n\n\n\n\n\nRefreshing", end="", flush=True)
+            for _ in range(10):
+                print(".", end="", flush=True)
+                time.sleep(0.5)
+            clear_screen()
+            print("\n\n\n\n\n\n\n\n===== Refreshed! =====")
+            time.sleep(2)
+            continue
+        if choice == 1:
             insert_rear()
-        elif choice == '2':
+        elif choice == 2:
             insert_front()
-        elif choice == '3':
+        elif choice == 3:
             delete_rear()
-        elif choice == '4':
+        elif choice == 4:
             delete_front()
-        elif choice == '5':
+        elif choice == 5:
             traverse()
-        elif choice == '6':
-            print("Thank you for using me! :)\n")
-            return
+        elif choice == 6:
+            import time
+            clear_screen()
+            print("\n\n\n\n\n\n\n\nReturning", end="", flush=True)
+            for _ in range(10):
+                print(".", end="", flush=True)
+                time.sleep(0.5)
+            clear_screen()    
+            print("\n\n\n\n\n\n\n\n===== Returned to Queue Menu! =====")
+            time.sleep(2)
+            break
         else:
             print("Invalid Choice. Please try again.")
             input("Press Enter key to return to the manu...")
