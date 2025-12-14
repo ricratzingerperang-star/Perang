@@ -1,4 +1,4 @@
-import os, PerangBinarySearch, PerangLinearSearch
+import os, PerangBinarySearch, PerangLinearSearch, PerangSequentialSearch
 
 def clear_screen():
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -9,7 +9,8 @@ def Searching():
         print("\n--- Searching ---\n")
         print("1. BinanySearch")
         print("2. LinearSearch")
-        print("3. Return to Main Menu")
+        print("3. Sequential Search")
+        print("4. Return to Main Menu")
         try:
             choice = int(input("\nEnter your choice (1-3): --> "))
         except ValueError:
@@ -30,6 +31,8 @@ def Searching():
         elif choice == 2:
             PerangLinearSearch.main()
         elif choice == 3:
+            PerangSequentialSearch.main()
+        elif choice == 4:
             import time
             clear_screen()
             print("\n\n\n\n\n\n\n\nReturning", end="", flush=True)

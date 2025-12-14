@@ -57,5 +57,14 @@ def Main_Menu():
             print("\nInvalid choice! Try again...")
          
 if __name__ == "__main__":
+    import time
+    clear_screen()
+    print("\n\n\n\n\n\n\n\n--> Activiting The Program", end="", flush=True)
+    for _ in range(15):
+        print(".", end="", flush=True)
+        time.sleep(0.5)
+    clear_screen()
+    print("\n\n\n\n\n\n\n\n===== Program Activited! =====")
+    time.sleep(2)
     Main_Menu()          
             
